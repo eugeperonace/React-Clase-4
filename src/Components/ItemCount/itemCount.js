@@ -18,7 +18,7 @@ useEffect(() => {
 
     return(
         <div className="counter">
-            <button disabled={count <= 1} onClick={decrease}>-</button>
+            <button disabled={count <= 1} onClick={decrease} className="izq">-</button>
             <span>{count}</span>
             <button disabled={count >= stock} onClick={increase}>+</button>
             <div>
