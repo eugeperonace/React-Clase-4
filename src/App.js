@@ -1,19 +1,27 @@
 import NavBar from "./Components/NavBar";
 import ItemListContainer from "./Components/ItemListContainer"
-import Micomponente from "./Micomponente";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer.js"
+import Cart from './Components/Cart/Cart';
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
 
-  const unMensaje = "hola";
-
   return (
-    <>
+    <BrowserRouter>
       <NavBar />
-      <ItemListContainer greeting="Welcome to Eishop"/>
-      <ItemDetailContainer />
-      <Micomponente miProp={unMensaje}/>
-    </>
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/category/:categoryId" element={<ItemListContainer />} />
+        <Route path="/detail/:id" element={<ItemDetailContainer />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </BrowserRouter>
+    
   );
 }
 

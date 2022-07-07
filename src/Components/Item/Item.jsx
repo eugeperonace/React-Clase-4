@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const Item = ({product}) => {
   console.log(product)
   const {img, name}= product
@@ -11,7 +10,7 @@ const Item = ({product}) => {
       <div className="card-body">
           <p className="card-text">{name}</p>
       </div>
-      <button className='btn btn-primary'>Ver más</button>
+          <button className='btn btn-primary'>Ver más</button>
     </div>
 
       /* <div className="card" style={{width:'20rem', margin:'.5rem'}}>

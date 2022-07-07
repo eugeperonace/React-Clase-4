@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 import './styles.css';
 import CartWidget from "../CartWidget";
+import { Link } from 'react-router-dom';
 
-const menuItems = [
+const categories = [
     {
         id: 1,
-        label: "Techno",
+        path: '/',
+        name: 'Home',
     },
     {
-        id: 21,
-        label: "Clothes",
+        id: 2,
+        path: '/category/sacos',
+        name: 'Sacos',
     },
     {
         id: 3,
-        label: "Decor",
+        path: '/category/camisas',
+        name: 'Camisas',
+    },
+    {
+        id: 4,
+        path: '/category/gorras',
+        name: 'Gorras',
     },
 ];
 
@@ -23,10 +32,8 @@ const NavBar = () =>{
         <div className="nav">
             <span className="nav-logo">EightShop</span>
             <div className={`nav-items ${isOpen ? "open" : ""}`.trim()}>
-               {menuItems.map((item) => (
-                    <a href="/" className="nav-item" key={item.id}>
-                        {item.label}
-                    </a>
+               {categories.map((category) => (
+                    <Link to={category.path} key={category.id} className="nav-item">{category.name}</Link>
                 ))}
             </div>
             <div className="cart">

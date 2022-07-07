@@ -10,7 +10,7 @@ const ItemDetail = ({product}) =>{
     }
 
     return(
-        <>
+        <div className="detail">
             <img src={img} alt="imggg" />
             <div>
                 <p>{name}</p>
@@ -22,14 +22,14 @@ const ItemDetail = ({product}) =>{
                     <option>M</option>
                     <option>L</option>
                 </select>    
-            
+        
                 <p>{description}</p>
                 <button>
                     <ItemCount initial={1} stock={5} onAdd={onAdd}/>
                 </button>
             </div>
 
-        </>
+        </div>
     );
 };
 
